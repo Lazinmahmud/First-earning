@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Casino | Premium Gaming Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e4a101;
+            --secondary: #1a1a2e;
+            --accent: #d62d20;
+            --dark: #0f0f1b;
+            --light: #f8f9fa;
+            --success: #28a745;
+            --info: #17a2b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--secondary), var(--dark));
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), #f8d568);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            background-color: #f8d568;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(228, 161, 1, 0.4);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background-color: #e84c3d;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(214, 45, 32, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(15, 15, 27, 0.7), rgba(15, 15, 27, 0.9)), 
+                        url('https://images.unsplash.com/photo-1596838132731-3301c3fd4317?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, var(--dark));
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary), white);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn-lg {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Games Section */
+        .games {
+            padding: 5rem 2rem;
+            background-color: var(--dark);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .game-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-btn {
+            padding: 0.5rem 1.5rem;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .game-card {
+            background: linear-gradient(145deg, var(--secondary), #252540);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .game-info {
+            padding: 1.5rem;
+        }
+
+        .game-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .game-info p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .game-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rating {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .players {
+            color: var(--info);
+            font-size: 0.9rem;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Promotions Section */
+        .promotions {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--secondary), var(--dark));
+            position: relative;
+        }
+
+        .promo-slider {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 1rem 0;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .promo-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .promo-slider::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .promo-slider::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        .promo-card {
+            min-width: 300px;
+            max-width: 400px;
+            background: linear-gradient(145deg, #2a2a4a, #1a1a2e);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            scroll-snap-align: start;
+            position: relative;
+        }
+
+        .promo-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .promo-content {
+            padding: 1.5rem;
+        }
+
+        .promo-content h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .promo-content p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .promo-timer {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+        }
+
+        .timer-box {
+            background-color: var(--dark);
+            padding: 0.5rem;
+            border-radius: 5px;
+            text-align: center;
+            min-width: 50px;
+        }
+
+        .timer-box span:first-child {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+
+        .timer-box span:last-child {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+        }
+
+        /* VIP Section */
+        .vip {
+            padding: 5rem 2rem;
+            background: url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1788&q=80') no-repeat center center/cover;
+            position: relative;
+        }
+
+        .vip::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(15, 15, 27, 0.95));
+        }
+
+        .vip-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .vip-content h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .vip-content p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .vip-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .benefit-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .payment-methods img {
+            height: 30px;
+            filter: grayscale(100%) brightness(0.5);
+            transition: filter 0.3s;
+        }
+
+        .payment-methods img:hover {
+            filter: grayscale(0) brightness(1);
+        }
+
+        /* Floating Signup Button */
+        .floating-signup {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(228, 161, 1, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(228, 161, 1, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(228, 161, 1, 0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-header h3 {
+                font-size: 2rem;
+            }
+
+            .game-categories {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/50x50" alt="Luxury Casino Logo">
+            <h1>Luxury Casino</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Promotions</a></li>
+                <li><a href="#">VIP</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <script type="text/javascript">
+	atOptions = {
+		'key' : '5e0271b9f779223459cb2092dceee591',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/5e0271b9f779223459cb2092dceee591/invoke.js"></script>
+        <div class="auth-buttons">
+            <button onclick="redirectToSignup()" class="btn btn-outline">Login</button>
+            <button class="btn btn-primary" onclick="redirectToSignup()">Sign Up</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <script async="async" data-cfasync="false" src="//pl27378376.profitableratecpm.com/cd0c2c09020c8769a19cffd1c0b9c2b7/invoke.js"></script>
+<div id="container-cd0c2c09020c8769a19cffd1c0b9c2b7"></div>
+        <div class="hero-content">
+            <h2>Experience Premium Casino Gaming</h2>
+            <p>Join the ultimate gaming destination with over 1000 games, exclusive bonuses, and 24/7 live dealer action. Sign up now and get up to $1000 welcome bonus!</p>
+            <div class="cta-buttons">
+                <button class="btn btn-primary btn-lg" onclick="redirectToSignup()">Get Started</button>
+                <button onclick="redirectToSignup()" class="btn btn-outline btn-lg">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section class="games">
+        <div class="section-header">
+            <h3>Our Featured Games</h3>
+            <p>Discover our wide selection of premium casino games from top providers in the industry</p>
+        </div>
+        <div class="game-categories">
+            <button class="category-btn active">All Games</button>
+            <button class="category-btn">Slots</button>
+            <button class="category-btn">Live Casino</button>
+            <button class="category-btn">Table Games</button>
+            <button class="category-btn">Jackpots</button>
+        </div>
+        <div class="game-grid">
+            <!-- Game Card 1 -->
+            <div class="game-card">
+                <span class="featured-badge">HOT</span>
+                <img src="https://via.placeholder.com/300x180?text=Book+of+Ra" alt="Book of Ra">
+                <div class="game-info">
+                    <h4>Book of Ra</h4>
+                    <p>Embark on an Egyptian adventure with this classic slot game with free spins feature.</p>
+                    <div class="game-stats">
+                        <span class="rating">4.9 ★</span>
+                        <span class="players">12.5K playing</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Game Card 2 -->
+            <div class="game-card">
+                <img src="https://via.placeholder.com/300x180?text=Roulette" alt="European Roulette">
+                <div class="game-info">
+                    <h4>European Roulette</h4>
+                    <p>The classic casino game with a single zero for better player odds.</p>
+                    <div class="game-stats">
+                        <span class="rating">4.8 ★</span>
+                        <span class="players">8.2K playing</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Game Card 3 -->
+            <div class="game-card">
+                <span class="featured-badge">NEW</span>
+                <img src="https://via.placeholder.com/300x180?text=Mega+Fortune" alt="Mega Fortune">
+                <div class="game-info">
+                    <h4>Mega Fortune</h4>
+                    <p>Progressive jackpot slot with luxury theme and massive payouts.</p>
+                    <div class="game-stats">
+                        <span class="rating">4.9 ★</span>
+                        <span class="players">15.7K playing</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Game Card 4 -->
+            <div class="game-card">
+                <img src="https://via.placeholder.com/300x180?text=Blackjack" alt="Live Blackjack">
+                <div class="game-info">
+                    <h4>Live Blackjack</h4>
+                    <p>Play with real dealers in real time from our luxury studio.</p>
+                    <div class="game-stats">
+                        <span class="rating">4.7 ★</span>
+                        <span class="players">6.3K playing</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Game Card 5 -->
+            <div class="game-card">
+                <img src="https://via.placeholder.com/300x180?text=Starburst" alt="Starburst">
+                <div class="game-info">
+                    <h4>Starburst</h4>
+                    <p>Colorful space-themed slot with expanding wilds and re-spins.</p>
+                    <div class="game-stats">
+                        <span class="rating">4.8 ★</span>
+                        <span class="players">18.9K playing</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Game Card 6 -->
+            <div class="game-card">
+                <span class="featured-badge">POPULAR</span>
+                <img src="https://via.placeholder.com/300x180?text=Baccarat" alt="Baccarat">
+                <div class="game-info">
+                    <h4>Baccarat</h4>
+                    <p>The elegant card game favored by high rollers worldwide.</p>
+                    <div class="game-stats">
+                        <span class="rating">4.6 ★</span>
+                        <span class="players">5.1K playing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 3rem;">
+            <button class="btn btn-primary btn-lg" onclick="redirectToSignup()">View All Games</button>
+        </div>
+    </section>
+
+    <!-- Promotions Section -->
+    <script type="text/javascript">
+	atOptions = {
+		'key' : '5e0271b9f779223459cb2092dceee591',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/5e0271b9f779223459cb2092dceee591/invoke.js"></script>
+    <section class="promotions">
+        <div class="section-header">
+            <h3>Exclusive Promotions</h3>
+            <p>Take advantage of our generous bonuses and special offers</p>
+        </div>
+        <div class="promo-slider">
+            <!-- Promo Card 1 -->
+            <div class="promo-card">
+                <img src="https://via.placeholder.com/400x180?text=Welcome+Bonus" alt="Welcome Bonus">
+                <div class="promo-content">
+                    <h4>Welcome Package</h4>
+                    <p>Get up to $1000 bonus over your first 3 deposits plus 100 free spins!</p>
+                    <div class="promo-timer">
+                        <div class="timer-box">
+                            <span class="days">03</span>
+                            <span>Days</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="hours">12</span>
+                            <span>Hours</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="minutes">45</span>
+                            <span>Mins</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="seconds">30</span>
+                            <span>Secs</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-accent" onclick="redirectToSignup()">Claim Now</button>
+                </div>
+            </div>
+            <script type="text/javascript">
+	atOptions = {
+		'key' : '5e0271b9f779223459cb2092dceee591',
+		'format' : 'iframe',
+		'height' : 50,
+		'width' : 320,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/5e0271b9f779223459cb2092dceee591/invoke.js"></script>
+            <!-- Promo Card 2 -->
+            <div class="promo-card">
+                <img src="https://via.placeholder.com/400x180?text=High+Roller" alt="High Roller Bonus">
+                <div class="promo-content">
+                    <h4>High Roller Bonus</h4>
+                    <p>Deposit $5000+ and receive a 25% bonus up to $2500 extra!</p>
+                    <div class="promo-timer">
+                        <div class="timer-box">
+                            <span class="days">01</span>
+                            <span>Days</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="hours">06</span>
+                            <span>Hours</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="minutes">30</span>
+                            <span>Mins</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="seconds">15</span>
+                            <span>Secs</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-accent" onclick="redirectToSignup()">Claim Now</button>
+                </div>
+            </div>
+            <!-- Promo Card 3 -->
+            <div class="promo-card">
+                <img src="https://via.placeholder.com/400x180?text=Free+Spins" alt="Free Spins">
+                <div class="promo-content">
+                    <h4>Weekend Free Spins</h4>
+                    <p>Get 50 free spins every Friday when you deposit $50 or more!</p>
+                    <div class="promo-timer">
+                        <div class="timer-box">
+                            <span class="days">02</span>
+                            <span>Days</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="hours">18</span>
+                            <span>Hours</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="minutes">20</span>
+                            <span>Mins</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="seconds">45</span>
+                            <span>Secs</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-accent" onclick="redirectToSignup()">Claim Now</button>
+                </div>
+            </div>
+            <!-- Promo Card 4 -->
+            <div class="promo-card">
+                <img src="https://via.placeholder.com/400x180?text=VIP+Rewards" alt="VIP Rewards">
+                <div class="promo-content">
+                    <h4>VIP Cashback</h4>
+                    <p>Up to 20% weekly cashback for our loyal VIP players!</p>
+                    <div class="promo-timer">
+                        <div class="timer-box">
+                            <span class="days">05</span>
+                            <span>Days</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="hours">10</span>
+                            <span>Hours</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="minutes">15</span>
+                            <span>Mins</span>
+                        </div>
+                        <div class="timer-box">
+                            <span class="seconds">00</span>
+                            <span>Secs</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-accent" onclick="redirectToSignup()">Join VIP</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Section -->
+    <section class="vip">
+        <div class="vip-content">
+            <h3>Luxury VIP Club</h3>
+            <p>Our exclusive VIP program offers unparalleled rewards, personalized service, and luxury experiences for our most valued players.</p>
+            <button class="btn btn-primary btn-lg" onclick="redirectToSignup()">Become a VIP</button>
+            
+            <div class="vip-benefits">
+                <div class="benefit-card">
+                    <i class="fas fa-gem"></i>
+                    <h4>Exclusive Bonuses</h4>
+                    <p>Higher deposit limits, personalized bonuses, and special promotions available only to VIP members.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-concierge-bell"></i>
+                    <h4>Dedicated Manager</h4>
+                    <p>Your personal account manager will ensure all your needs are met promptly and professionally.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-gift"></i>
+                    <h4>Luxury Gifts</h4>
+                    <p>Receive luxury gifts, event invitations, and all-expenses-paid trips to exotic destinations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Licenses</a></li>
+                    <li><a href="#">Responsible Gaming</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Games</h4>
+                <ul>
+                    <li><a href="#">Slots</a></li>
+                    <li><a href="#">Live Casino</a></li>
+                    <li><a href="#">Table Games</a></li>
+                    <li><a href="#">Jackpots</a></li>
+                    <li><a href="#">New Games</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Promotions</h4>
+                <ul>
+                    <li><a href="#">Welcome Bonus</a></li>
+                    <li><a href="#">Free Spins</a></li>
+                    <li><a href="#">Reload Bonuses</a></li>
+                    <li><a href="#">VIP Program</a></li>
+                    <li><a href="#">Tournaments</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Live Chat</a></li>
+                    <li><a href="#">Payment Help</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Connect With Us</h4>
+                <p>Follow us on social media for the latest updates and exclusive offers.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="payment-methods">
+            <img src="https://via.placeholder.com/60x30?text=Visa" alt="Visa">
+            <img src="https://via.placeholder.com/60x30?text=Mastercard" alt="Mastercard">
+            <img src="https://via.placeholder.com/60x30?text=Skrill" alt="Skrill">
+            <img src="https://via.placeholder.com/60x30?text=Neteller" alt="Neteller">
+            <img src="https://via.placeholder.com/60x30?text=PayPal" alt="PayPal">
+            <img src="https://via.placeholder.com/60x30?text=Bitcoin" alt="Bitcoin">
+            <img src="https://via.placeholder.com/60x30?text=Ethereum" alt="Ethereum">
+            <img src="https://via.placeholder.com/60x30?text=Bank+Transfer" alt="Bank Transfer">
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 Luxury Casino. All rights reserved. | 18+ Only. Please gamble responsibly.</p>
+            <p>Licensed and regulated by the Malta Gaming Authority (MGA) and UK Gambling Commission (UKGC).</p>
+        </div>
+    </footer>
+
+    <!-- Floating Signup Button -->
+    <div class="floating-signup">
+        <button class="btn btn-primary btn-lg" onclick="redirectToSignup()">SIGN UP & GET BONUS</button>
+    </div>
+
+    <script>
+        // Simple JavaScript for functionality
+        function redirectToSignup() {
+            // Replace with your actual affiliate signup link
+            window.location.href = "https://www.profitableratecpm.com/wxvtzj417?key=fc9b25a8571e281c5d158d4a8aa07c30";
+        }
+
+        // Category buttons functionality
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // In a real implementation, this would filter games
+            });
+        });
+
+        // Countdown timer for promotions
+        function updateCountdown() {
+            const timers = document.querySelectorAll('.promo-timer');
+            timers.forEach(timer => {
+                const days = timer.querySelector('.days');
+                const hours = timer.querySelector('.hours');
+                const minutes = timer.querySelector('.minutes');
+                const seconds = timer.querySelector('.seconds');
+                
+                // Random countdown for demo purposes
+                let sec = parseInt(seconds.textContent);
+                let min = parseInt(minutes.textContent);
+                let hr = parseInt(hours.textContent);
+                let d = parseInt(days.textContent);
+                
+                sec--;
+                if (sec < 0) {
+                    sec = 59;
+                    min--;
+                    if (min < 0) {
+                        min = 59;
+                        hr--;
+                        if (hr < 0) {
+                            hr = 23;
+                            d--;
+                            if (d < 0) {
+                                d = 0;
+                                hr = 0;
+                                min = 0;
+                                sec = 0;
+                            }
+                        }
+                    }
+                }
+                
+                days.textContent = d.toString().padStart(2, '0');
+                hours.textContent = hr.toString().padStart(2, '0');
+                minutes.textContent = min.toString().padStart(2, '0');
+                seconds.textContent = sec.toString().padStart(2, '0');
+            });
+        }
+
+        setInterval(updateCountdown, 1000);
+
+        // Game card hover effect enhancement
+        const gameCards = document.querySelectorAll('.game-card');
+        gameCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.5)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.boxShadow = '';
+            });
+        });
+    </script>
+    <script type='text/javascript' src='//pl27378394.profitableratecpm.com/f2/ff/56/f2ff563548602a41dc48ade46c8e4680.js'></script>
+</body>
+</html>
